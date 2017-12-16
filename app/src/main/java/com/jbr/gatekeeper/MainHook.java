@@ -15,17 +15,17 @@ public class MainHook implements IXposedHookLoadPackage {
         XposedBridge.log("进入拦截方法");
         XposedBridge.log("-----------------Found app: " + loadPkgParam.packageName);
 
-        XposedHelpers.setStaticObjectField(android.os.Build.class, "BOARD", "HUAWEI");
-        XposedHelpers.setStaticObjectField(android.os.Build.class, "CPU_ABI", "HUAWEI");
-        XposedHelpers.setStaticObjectField(android.os.Build.class, "BRAND",  "HUAWEI");
-        XposedHelpers.setStaticObjectField(android.os.Build.class, "MODEL", "HUAWEI");
-        XposedHelpers.setStaticObjectField(android.os.Build.class, "ID","HUAWEI");
-        XposedHelpers.setStaticObjectField(android.os.Build.class, "DISPLAY",  "HUAWEI");
-        XposedHelpers.setStaticObjectField(android.os.Build.class, "PRODUCT", "HUAWEI");
-        XposedHelpers.setStaticObjectField(android.os.Build.class, "MANUFACTURER",  "HUAWEI");
-        XposedHelpers.setStaticObjectField(android.os.Build.class, "DEVICE",  "HUAWEI");
-        XposedHelpers.setStaticObjectField(android.os.Build.class, "HARDWARE",  "HUAWEI");
-        XposedHelpers.setStaticObjectField(android.os.Build.class, "SERIAL",  "HUAWEI");
-        XposedHelpers.setStaticObjectField(android.os.Build.class, "FINGERPRINT", "HUAWEI");
+//        XposedHelpers.setStaticObjectField(android.os.Build.class, "BOARD", "HUAWEI");
+//        XposedHelpers.setStaticObjectField(android.os.Build.class, "CPU_ABI", "HUAWEI");
+//        XposedHelpers.setStaticObjectField(android.os.Build.class, "BRAND",  "HUAWEI");
+//        XposedHelpers.setStaticObjectField(android.os.Build.class, "MODEL", "HUAWEI");
+//        XposedHelpers.setStaticObjectField(android.os.Build.class, "ID","HUAWEI");
+//        XposedHelpers.setStaticObjectField(android.os.Build.class, "DISPLAY",  "HUAWEI");
+//        XposedHelpers.setStaticObjectField(android.os.Build.class, "PRODUCT", "HUAWEI");
+//        XposedHelpers.setStaticObjectField(android.os.Build.class, "MANUFACTURER",  "HUAWEI");
+//        XposedHelpers.setStaticObjectField(android.os.Build.class, "DEVICE",  "HUAWEI");
+//        XposedHelpers.setStaticObjectField(android.os.Build.class, "HARDWARE",  "HUAWEI");
+//        XposedHelpers.setStaticObjectField(android.os.Build.class, "SERIAL",  "HUAWEI");
+//        XposedHelpers.setStaticObjectField(android.os.Build.class, "FINGERPRINT", "HUAWEI");
     }
 }

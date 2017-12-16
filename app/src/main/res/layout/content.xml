@@ -5,12 +5,8 @@
     android:orientation="vertical">
 
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
-        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/board" android:singleLine="true" android:layout_weight="0.6" />
-        <TextView android:id="@+id/board" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
-    </LinearLayout>
-    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
-        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/cpu" android:singleLine="true" android:layout_weight="0.6" />
-        <TextView android:id="@+id/cpu" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/manufacturer" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/manufacturer" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
     </LinearLayout>
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
         <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/brand" android:singleLine="true" android:layout_weight="0.6" />
@@ -21,37 +17,26 @@
         <TextView android:id="@+id/model" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
     </LinearLayout>
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
-        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/id" android:singleLine="true" android:layout_weight="0.6" />
-        <TextView android:id="@+id/id" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
-    </LinearLayout>
-    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
-        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/display" android:singleLine="true" android:layout_weight="0.6" />
-        <TextView android:id="@+id/display" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/device" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/device" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
     </LinearLayout>
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
         <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/product" android:singleLine="true" android:layout_weight="0.6" />
         <TextView android:id="@+id/product" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
     </LinearLayout>
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
-        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/manufacturer" android:singleLine="true" android:layout_weight="0.6" />
-        <TextView android:id="@+id/manufacturer" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/release" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/release" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
     </LinearLayout>
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
-        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/device" android:singleLine="true" android:layout_weight="0.6" />
-        <TextView android:id="@+id/device" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/user" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/user" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
     </LinearLayout>
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
-        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/hardware" android:singleLine="true" android:layout_weight="0.6" />
-        <TextView android:id="@+id/hardware" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/sdk" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/sdk" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
     </LinearLayout>
-    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
-        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/serial" android:singleLine="true" android:layout_weight="0.6" />
-        <TextView android:id="@+id/serial" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
-    </LinearLayout>
-    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
-        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/fingerprint" android:singleLine="true" android:layout_weight="0.6" />
-        <TextView android:id="@+id/fingerprint" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
-    </LinearLayout>
+
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
         <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="QQQQQQQ" android:singleLine="true" android:layout_weight="0.6" />
         <TextView android:id="@+id/t13" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />

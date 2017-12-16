@@ -12,7 +12,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btn_Restore"
+            android:id="@+id/btn_restore"
             android:layout_width="wrap_content"
             android:layout_height="30dip"
             android:layout_marginHorizontal="10dip"
@@ -24,7 +24,7 @@
 
 
         <Button
-            android:id="@+id/btn_Get"
+            android:id="@+id/btn_get"
             android:layout_width="wrap_content"
             android:layout_height="30dip"
             android:layout_marginHorizontal="10dip"
