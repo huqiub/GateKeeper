@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">GateKeeper</string>
+    <string name="randomNew">随机生成</string>
+    <string name="restore">还原</string>
+
+
+    <string name="board">主板 :  </string>
+    <string name="cpu">系统架构 :  </string>
+    <string name="brand">品牌 :  </string>
+    <string name="model">型号 :  </string>
+    <string name="id">设备版本号 :  </string>
+    <string name="display">显示屏参数 :  </string>
+    <string name="product">产品名 :  </string>
+    <string name="manufacturer">制造商 :  </string>
+    <string name="device">设备名 :  </string>
+    <string name="hardware">硬件名称 :  </string>
+    <string name="serial">硬件序列号 :  </string>
+    <string name="fingerprint">硬件识别码 :  </string>
 </resources>
