@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,15 +14,10 @@ import android.widget.Toast;
 import com.jbr.gatekeeper.constants.Constants;
 import com.jbr.gatekeeper.utils.BuildProperties;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Properties;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnRestore;
+    private Button btnRandom;
 
     private TextView manufacturer;
     private TextView brand;
@@ -31,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView release;
     private TextView user;
     private TextView sdk;
+
+    private Toast taost;
 
     private String strManufacturer;
     private String strBrand;
@@ -51,35 +49,73 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         defaultSharedPref = getPreferences(Context.MODE_PRIVATE);
-        randomSharedPref = getSharedPreferences(Constants.PREFS_FILE,Context.MODE_PRIVATE);
+        randomSharedPref = getSharedPreferences(Constants.PREFS_FILE,Context.MODE_WORLD_READABLE);
 
         if(!defaultSharedPref.getBoolean(Constants.KEY_IS_SET,false)){
             setDefaultValues();
-        //TODO：只赋值了手机BUILD信息，其他信息待补全
         }
-        initSharedPref(randomSharedPref);
         getTextView();
+        initTextValue(randomSharedPref);
         setText();
         btnRestore = findViewById(R.id.btn_restore);
-        btnRestore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //setDefaultValues();
-                Toast.makeText(MainActivity.this,"ttttttttttttt",Toast.LENGTH_SHORT).show();
-            }
-        });
+        btnRandom = findViewById(R.id.btn_random);
+        btnRestore.setOnClickListener(this);
+        btnRandom.setOnClickListener(this);
     }
 
-    private void initSharedPref(SharedPreferences randomSharedPref){
-        this.strManufacturer = randomSharedPref.getString(Constants.KEY_MANUFACTURER, Build.MANUFACTURER);
-        this.strBrand = randomSharedPref.getString(Constants.KEY_BRAND,Build.BRAND);
-        this.strModel = randomSharedPref.getString(Constants.KEY_MODEL,Build.MODEL);
-        this.strDevice = randomSharedPref.getString(Constants.KEY_DEVICE,Build.DEVICE);
-        this.strProduct = randomSharedPref.getString(Constants.KEY_PRODUCT,Build.PRODUCT);
-        this.strRelease =  randomSharedPref.getString(Constants.KEY_RELEASE,Build.VERSION.RELEASE);
-        this.strUser = randomSharedPref.getString(Constants.KEY_USER,Build.USER);
-        this.strSdk = randomSharedPref.getString(Constants.KEY_SDK,Build.VERSION.SDK);
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.btn_restore:
+                initTextValue(this.defaultSharedPref);
+                setRandomSharedPref();
+                setText();
+                taostMessage("成功还原！");
+                break;
+            case R.id.btn_random:
+                testRandom();
+                setRandomSharedPref();
+                setText();
+                taostMessage("成功生成信息！");
+                break;
+            default:
+                break;
+        }
+    }
+    private void testRandom(){
+        this.strManufacturer = "HUAWEI";
+        this.strBrand = "HUAWEI";
+        this.strModel = "HUAWEI";
+        this.strDevice = "HUAWEI";
+        this.strProduct = "HUAWEI";
+        this.strRelease =  "HUAWEI";
+        this.strUser = "HUAWEI";
+        this.strSdk = "HUAWEI";
 
+    }
+    private void initTextValue(SharedPreferences sharedPref){
+        this.strManufacturer = sharedPref.getString(Constants.KEY_MANUFACTURER, Build.MANUFACTURER);
+        this.strBrand = sharedPref.getString(Constants.KEY_BRAND,Build.BRAND);
+        this.strModel = sharedPref.getString(Constants.KEY_MODEL,Build.MODEL);
+        this.strDevice = sharedPref.getString(Constants.KEY_DEVICE,Build.DEVICE);
+        this.strProduct = sharedPref.getString(Constants.KEY_PRODUCT,Build.PRODUCT);
+        this.strRelease =  sharedPref.getString(Constants.KEY_RELEASE,Build.VERSION.RELEASE);
+        this.strUser = sharedPref.getString(Constants.KEY_USER,Build.USER);
+        this.strSdk = sharedPref.getString(Constants.KEY_SDK,Build.VERSION.SDK);
+
+    }
+
+    private void setRandomSharedPref(){
+        SharedPreferences.Editor editor = this.randomSharedPref.edit();
+        editor.putString(Constants.KEY_MANUFACTURER,this.strManufacturer);
+        editor.putString(Constants.KEY_BRAND,this.strBrand);
+        editor.putString(Constants.KEY_MODEL,this.strModel);
+        editor.putString(Constants.KEY_DEVICE,this.strDevice);
+        editor.putString(Constants.KEY_PRODUCT,this.strProduct);
+        editor.putString(Constants.KEY_RELEASE,this.strRelease);
+        editor.putString(Constants.KEY_USER,this.strUser);
+        editor.putString(Constants.KEY_SDK,this.strSdk);
+        editor.apply();
     }
 
     private void setText(){
@@ -106,25 +142,27 @@ public class MainActivity extends AppCompatActivity {
 
     private void setDefaultValues(){
         BuildProperties properties = new BuildProperties();
-        String manufacturer = properties.getProperty(Constants.BUILD_PRODUCT_MANUFACTURER,"");
-        String brand = properties.getProperty(Constants.BUILD_PRODUCT_BRAND,"");
-        String model = properties.getProperty(Constants.BUILD_PRODUCT_MODEL,"");
-        String device = properties.getProperty(Constants.BUILD_PRODUCT_DEVICE,"");
-        String product = properties.getProperty(Constants.BUILD_PRODUCT,"");
-        String release = properties.getProperty(Constants.BUILD_VERSION_RELEASE,"");
-        String user = properties.getProperty(Constants.BUILD_USER,"");
-        String sdk =  properties.getProperty(Constants.BUILD_VERSION_SDK,"");
-
         SharedPreferences.Editor defaultEditor = defaultSharedPref.edit();
-        defaultEditor.putString(Constants.KEY_MANUFACTURER,manufacturer);
-        defaultEditor.putString(Constants.KEY_BRAND,brand);
-        defaultEditor.putString(Constants.KEY_MODEL,model);
-        defaultEditor.putString(Constants.KEY_DEVICE,device);
-        defaultEditor.putString(Constants.KEY_PRODUCT,product);
-        defaultEditor.putString(Constants.KEY_RELEASE,release);
-        defaultEditor.putString(Constants.KEY_USER,user);
-        defaultEditor.putString(Constants.KEY_SDK,sdk);
+        defaultEditor.putString(Constants.KEY_MANUFACTURER,properties.getProperty(Constants.BUILD_PRODUCT_MANUFACTURER,""));
+        defaultEditor.putString(Constants.KEY_BRAND,properties.getProperty(Constants.BUILD_PRODUCT_BRAND,""));
+        defaultEditor.putString(Constants.KEY_MODEL,properties.getProperty(Constants.BUILD_PRODUCT_MODEL,""));
+        defaultEditor.putString(Constants.KEY_DEVICE,properties.getProperty(Constants.BUILD_PRODUCT_DEVICE,""));
+        defaultEditor.putString(Constants.KEY_PRODUCT,properties.getProperty(Constants.BUILD_PRODUCT,""));
+        defaultEditor.putString(Constants.KEY_RELEASE,properties.getProperty(Constants.BUILD_VERSION_RELEASE,""));
+        defaultEditor.putString(Constants.KEY_USER,properties.getProperty(Constants.BUILD_USER,""));
+        defaultEditor.putString(Constants.KEY_SDK,properties.getProperty(Constants.BUILD_VERSION_SDK,""));
         defaultEditor.putBoolean(Constants.KEY_IS_SET,true);
         defaultEditor.apply();
+    }
+
+
+
+    private void taostMessage(String message)
+    {
+        if (this.taost != null) {
+            this.taost.cancel();
+        }
+        this.taost = Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT);
+        this.taost.show();
     }
 }

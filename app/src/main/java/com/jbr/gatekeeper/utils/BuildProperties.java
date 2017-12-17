@@ -21,7 +21,6 @@ public class BuildProperties {
         }catch (IOException exception){
             Log.e("IO","获取/system/build.prop文件出错--"+exception);
         }
-
     }
 
     public String getProperty(final String name, final String defaultValue) {
