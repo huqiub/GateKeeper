@@ -3,6 +3,7 @@ package com.jbr.gatekeeper;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView release;
     private TextView user;
     private TextView sdk;
+    private TextView androidID;
 
     private Toast taost;
 
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String strRelease;
     private String strUser;
     private String strSdk;
+    private String strAndroidID;
 
     private SharedPreferences defaultSharedPref;
     private SharedPreferences randomSharedPref;
@@ -48,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         defaultSharedPref = getPreferences(Context.MODE_PRIVATE);
-        randomSharedPref = getSharedPreferences(Constants.PREFS_FILE,Context.MODE_WORLD_READABLE);
+        randomSharedPref = getSharedPreferences(Constants.PREFS_FILE,Context.MODE_PRIVATE);
 
         if(!defaultSharedPref.getBoolean(Constants.KEY_IS_SET,false)){
             setDefaultValues();
@@ -90,6 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.strRelease =  "HUAWEI";
         this.strUser = "HUAWEI";
         this.strSdk = "HUAWEI";
+        this.strAndroidID = "HUAWEI";
 
     }
     private void initTextValue(SharedPreferences sharedPref){
@@ -101,6 +105,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.strRelease =  sharedPref.getString(Constants.KEY_RELEASE,Build.VERSION.RELEASE);
         this.strUser = sharedPref.getString(Constants.KEY_USER,Build.USER);
         this.strSdk = sharedPref.getString(Constants.KEY_SDK,Build.VERSION.SDK);
+        this.strAndroidID = sharedPref.getString(Constants.KEY_ANDROID_ID, getAndroidID());
 
     }
 
@@ -114,6 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editor.putString(Constants.KEY_RELEASE,this.strRelease);
         editor.putString(Constants.KEY_USER,this.strUser);
         editor.putString(Constants.KEY_SDK,this.strSdk);
+        editor.putString(Constants.KEY_ANDROID_ID,this.strAndroidID);
         editor.apply();
     }
 
@@ -126,6 +132,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.release.setText(this.strRelease);
         this.user.setText(this.strUser);
         this.sdk.setText(this.strSdk);
+        this.androidID.setText(this.strAndroidID);
     }
 
     private void getTextView(){
@@ -137,6 +144,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.release = findViewById(R.id.release);
         this.user = findViewById(R.id.user);
         this.sdk = findViewById(R.id.sdk);
+        this.androidID = findViewById(R.id.android_id);
     }
 
     private void setDefaultValues(){
@@ -150,6 +158,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         defaultEditor.putString(Constants.KEY_RELEASE,properties.getProperty(Constants.BUILD_VERSION_RELEASE,""));
         defaultEditor.putString(Constants.KEY_USER,properties.getProperty(Constants.BUILD_USER,""));
         defaultEditor.putString(Constants.KEY_SDK,properties.getProperty(Constants.BUILD_VERSION_SDK,""));
+        defaultEditor.putString(Constants.KEY_ANDROID_ID,getAndroidID());
         defaultEditor.putBoolean(Constants.KEY_IS_SET,true);
         defaultEditor.apply();
     }
@@ -163,5 +172,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         this.taost = Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT);
         this.taost.show();
+    }
+
+    private String getAndroidID(){
+        return Settings.Secure.getString(this.getContentResolver(), Settings.Secure.ANDROID_ID);
     }
 }

@@ -27,6 +27,7 @@ public interface Constants {
     public static final String KEY_RELEASE = "release";
     public static final String KEY_USER= "user";
     public static final String KEY_SDK = "sdk";
+    public static final String KEY_ANDROID_ID = "id";
 
 
 

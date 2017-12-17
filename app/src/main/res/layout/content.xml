@@ -38,8 +38,8 @@
     </LinearLayout>
 
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
-        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="QQQQQQQ" android:singleLine="true" android:layout_weight="0.6" />
-        <TextView android:id="@+id/t13" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/android_id" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/android_id" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
     </LinearLayout>
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
         <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="QQQQQQQ" android:singleLine="true" android:layout_weight="0.6" />

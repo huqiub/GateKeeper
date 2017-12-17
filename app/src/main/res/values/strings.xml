@@ -17,7 +17,7 @@
     <!--<string name="id">设备版本号 :  </string>-->
     <!--<string name="display">显示屏参数 :  </string>-->
     <!--<string name="hardware">硬件名称 :  </string>-->
-    <string name="android_id">Android_ID :  getString 108fe4412h62</string>
+    <string name="android_id">Android_ID :  </string>
     <string name="serial">串口序列号 :  SERIAL 42fdgf5</string>
     <string name="imei">序列号 : getDeviceId 44867835665756</string>
     <string name="line1_number">手机号码 :  getLine1Number 13800138000</string>
