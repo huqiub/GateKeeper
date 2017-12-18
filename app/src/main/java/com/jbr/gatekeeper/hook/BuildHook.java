@@ -25,17 +25,17 @@ public class BuildHook {
         XposedHelpers.findField(Build.VERSION.class, "RELEASE").set(null,  XSharedPrefUtil.get(Constants.KEY_RELEASE,Build.VERSION.RELEASE));
         XposedHelpers.findField(Build.VERSION.class, "SDK").set(null, XSharedPrefUtil.get(Constants.KEY_SDK,Build.VERSION.SDK));
 
-        try {
-            XposedHelpers.findAndHookMethod("android.provider.Settings.Secure", loadPkgParam.classLoader, "getString",ContentResolver.class, String.class, new XC_MethodHook() {
-                @Override
-                protected void afterHookedMethod(MethodHookParam param)throws Throwable {
-                    if (param.args[1].equals(Settings.Secure.ANDROID_ID)) {
-                        param.setResult(XSharedPrefUtil.get(Constants.KEY_ANDROID_ID,""));
-                    }
-                }
-            });
-        } catch (Exception e) {
-            XposedBridge.log("获取 Android ID 错误: " + e.getMessage());
-        }
+//        try {
+//            XposedHelpers.findAndHookMethod("android.provider.Settings.Secure", loadPkgParam.classLoader, "getString",ContentResolver.class, String.class, new XC_MethodHook() {
+//                @Override
+//                protected void afterHookedMethod(MethodHookParam param)throws Throwable {
+//                    if (param.args[1].equals(Settings.Secure.ANDROID_ID)) {
+//                        param.setResult(XSharedPrefUtil.get(Constants.KEY_ANDROID_ID,"tt7678hh"));
+//                    }
+//                }
+//            });
+//        } catch (Exception e) {
+//            XposedBridge.log("获取 Android ID 错误: " + e.getMessage());
+//        }
     }
 }

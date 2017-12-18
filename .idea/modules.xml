@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GateKeeper.iml" filepath="$PROJECT_DIR$/GateKeeper.iml" />
+      <module fileurl="file://F:\AndroidStudioProjects\GateKeeper\GateKeeper.iml" filepath="F:\AndroidStudioProjects\GateKeeper\GateKeeper.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://F:\AndroidStudioProjects\GateKeeper\app\app.iml" filepath="F:\AndroidStudioProjects\GateKeeper\app\app.iml" />
     </modules>
   </component>
 </project>
