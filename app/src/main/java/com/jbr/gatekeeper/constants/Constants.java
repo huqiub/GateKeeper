@@ -27,7 +27,18 @@ public interface Constants {
     public static final String KEY_RELEASE = "release";
     public static final String KEY_USER= "user";
     public static final String KEY_SDK = "sdk";
+    public static final String KEY_SERIAL = "serial";
     public static final String KEY_ANDROID_ID = "id";
+    public static final String KEY_IMEI = "imei";
+    public static final String KEY_PHONE_NUMBER = "phone_number";
+    public static final String KEY_SIMSERIAL_NUMBER = "simserial_number";
+    public static final String KEY_IMSI = "imsi";
+    public static final String KEY_SIM_COUNTRY = "sim_country";
+    public static final String KEY_SIM_OPERATOR = "sim_operator";
+    public static final String KEY_SIM_OPERATOR_NAME = "sim_operator_name";
+    public static final String KEY_NETWORK_COUNTRY = "network_country";
+    public static final String KEY_NETWORK_OPERATOR = "network_operator";
+    public static final String KEY_NETWORK_OPERATOR_NAME = "network_operator_name";
 
 
 

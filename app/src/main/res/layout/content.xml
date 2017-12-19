@@ -42,48 +42,48 @@
         <TextView android:id="@+id/android_id" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
     </LinearLayout>
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
-        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="QQQQQQQ" android:singleLine="true" android:layout_weight="0.6" />
-        <TextView android:id="@+id/t14" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content"  android:textStyle="bold" android:text="@string/serial" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/serial" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
     </LinearLayout>
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
-        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="QQQQQQQ" android:singleLine="true" android:layout_weight="0.6" />
-        <TextView android:id="@+id/t15" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/imei" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/imei" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
     </LinearLayout>
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
-        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="QQQQQQQ" android:singleLine="true" android:layout_weight="0.6" />
-        <TextView android:id="@+id/t16" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/phone_number" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/phone_number" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
     </LinearLayout>
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
-        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="QQQQQQQ" android:singleLine="true" android:layout_weight="0.6" />
-        <TextView android:id="@+id/t17" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/simserial_number" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/simserial_number" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
     </LinearLayout>
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
-        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="QQQQQQQ" android:singleLine="true" android:layout_weight="0.6" />
-        <TextView android:id="@+id/t18" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/imsi" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/imsi" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
     </LinearLayout>
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
-        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="QQQQQQQ" android:singleLine="true" android:layout_weight="0.6" />
-        <TextView android:id="@+id/t19" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/sim_country" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/sim_country" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
     </LinearLayout>
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
-        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="QQQQQQQ" android:singleLine="true" android:layout_weight="0.6" />
-        <TextView android:id="@+id/t20" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/sim_operator" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/sim_operator" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
     </LinearLayout>
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
-        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="QQQQQQQ" android:singleLine="true" android:layout_weight="0.6" />
-        <TextView android:id="@+id/t21" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/sim_operator_name" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/sim_operator_name" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
     </LinearLayout>
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
-        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="QQQQQQQ" android:singleLine="true" android:layout_weight="0.6" />
-        <TextView android:id="@+id/t22" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/network_country" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/network_country" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
     </LinearLayout>
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
-        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="QQQQQQQ" android:singleLine="true" android:layout_weight="0.6" />
-        <TextView android:id="@+id/t23" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/network_operator" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/network_operator" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
     </LinearLayout>
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
-        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="QQQQQQQ" android:singleLine="true" android:layout_weight="0.6" />
-        <TextView android:id="@+id/t24" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/network_operator_name" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/network_operator_name" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
     </LinearLayout>
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
         <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="QQQQQQQ" android:singleLine="true" android:layout_weight="0.6" />
