@@ -39,6 +39,12 @@ public interface Constants {
     public static final String KEY_NETWORK_COUNTRY = "network_country";
     public static final String KEY_NETWORK_OPERATOR = "network_operator";
     public static final String KEY_NETWORK_OPERATOR_NAME = "network_operator_name";
+    public static final String KEY_MAC_ADDRESS = "mac_address";
+    public static final String KEY_IP_ADDRESS = "ip_address";
+    public static final String KEY_SSID = "ssid";
+    public static final String KEY_BSSID = "bssid";
+    public static final String KEY_DENSITY = "density";
+    public static final String KEY_DENSITY_DPI = "density_dpi";
 
 
 

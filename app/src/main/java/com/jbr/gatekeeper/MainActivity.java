@@ -4,12 +4,15 @@ import android.Manifest;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +21,11 @@ import android.widget.Toast;
 
 import com.jbr.gatekeeper.constants.Constants;
 import com.jbr.gatekeeper.utils.BuildProperties;
+import com.jbr.gatekeeper.utils.SystemUtil;
+
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.LineNumberReader;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -43,7 +51,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView simOperatorName;
     private TextView networkCountry;
     private TextView networkOperator;
-    private TextView netWorkOperatorName;
+    private TextView networkOperatorName;
+    private TextView macAddress;
+    private TextView ipAddress;
+    private TextView ssid;
+    private TextView bssid;
+    private TextView density;
+    private TextView densityDpi;
 
     private Toast taost;
 
@@ -67,6 +81,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String strNetworkCountry;
     private String strNetworkOperator;
     private String strNetworkOperatorName;
+    private String strMacAddress;
+    private String strIpAddress;
+    private String strSsid;
+    private String strBssid;
+    private String strDensity;
+    private String strDensityDpi;
 
     private SharedPreferences defaultSharedPref;
     private SharedPreferences randomSharedPref;
@@ -133,6 +153,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.strNetworkCountry = "cn";
         this.strNetworkOperator = "46002";
         this.strNetworkOperatorName = "中国移动";
+        this.strMacAddress = "4F:H6:6K:3F:7H:2D";
+        this.strIpAddress = "192.169.1.100";
+        this.strSsid = "ae0089dhf";
+        this.strBssid = "07:2f:24:5h:6r:7e";
+        this.strDensity= "3.0";
+        this.strDensityDpi = "480";
 
     }
 
@@ -146,17 +172,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.strUser = sharedPref.getString(Constants.KEY_USER, Build.USER);
         this.strSdk = sharedPref.getString(Constants.KEY_SDK, Build.VERSION.SDK);
         this.strSerial = sharedPref.getString(Constants.KEY_SERIAL, Build.SERIAL);
-        this.strAndroidID = sharedPref.getString(Constants.KEY_ANDROID_ID, getAndroidID());
-        this.strImei = sharedPref.getString(Constants.KEY_IMEI, getIMEI());
-        this.strPhoneNumber = sharedPref.getString(Constants.KEY_PHONE_NUMBER, getPhoneNumber());
-        this.strSimserialNumber = sharedPref.getString(Constants.KEY_SIMSERIAL_NUMBER, getSimserialNumber());
-        this.strImsi = sharedPref.getString(Constants.KEY_IMSI, getIMSI());
-        this.strSimCountry = sharedPref.getString(Constants.KEY_SIM_COUNTRY, getSimCountry());
-        this.strSimOperator = sharedPref.getString(Constants.KEY_SIM_OPERATOR, getSimOperator());
-        this.strSimOperatorName = sharedPref.getString(Constants.KEY_SIM_OPERATOR_NAME, getSimOperatorName());
-        this.strNetworkCountry = sharedPref.getString(Constants.KEY_NETWORK_COUNTRY, getNetworkCountry());
-        this.strNetworkOperator = sharedPref.getString(Constants.KEY_NETWORK_OPERATOR, getNetWorkOperator());
-        this.strNetworkOperatorName = sharedPref.getString(Constants.KEY_NETWORK_OPERATOR_NAME, getNetWorkOperatorName());
+        this.strAndroidID = sharedPref.getString(Constants.KEY_ANDROID_ID, SystemUtil.getAndroidID(this));
+        this.strImei = sharedPref.getString(Constants.KEY_IMEI, SystemUtil.getIMEI(this));
+        this.strPhoneNumber = sharedPref.getString(Constants.KEY_PHONE_NUMBER, SystemUtil.getPhoneNumber(this));
+        this.strSimserialNumber = sharedPref.getString(Constants.KEY_SIMSERIAL_NUMBER, SystemUtil.getSimserialNumber(this));
+        this.strImsi = sharedPref.getString(Constants.KEY_IMSI, SystemUtil.getIMSI(this));
+        this.strSimCountry = sharedPref.getString(Constants.KEY_SIM_COUNTRY, SystemUtil.getSimCountry(this));
+        this.strSimOperator = sharedPref.getString(Constants.KEY_SIM_OPERATOR, SystemUtil.getSimOperator(this));
+        this.strSimOperatorName = sharedPref.getString(Constants.KEY_SIM_OPERATOR_NAME, SystemUtil.getSimOperatorName(this));
+        this.strNetworkCountry = sharedPref.getString(Constants.KEY_NETWORK_COUNTRY, SystemUtil.getNetworkCountry(this));
+        this.strNetworkOperator = sharedPref.getString(Constants.KEY_NETWORK_OPERATOR, SystemUtil.getNetWorkOperator(this));
+        this.strNetworkOperatorName = sharedPref.getString(Constants.KEY_NETWORK_OPERATOR_NAME, SystemUtil.getNetworkOperatorName(this));
+        this.strMacAddress = sharedPref.getString(Constants.KEY_MAC_ADDRESS, SystemUtil.getMacAddress(this));
+        this.strIpAddress = sharedPref.getString(Constants.KEY_IP_ADDRESS, SystemUtil.getIpAddress(this));
+        this.strSsid = sharedPref.getString(Constants.KEY_SSID, SystemUtil.getSsid(this));
+        this.strBssid = sharedPref.getString(Constants.KEY_BSSID, SystemUtil.getBssid(this));
+        this.strDensity = sharedPref.getString(Constants.KEY_DENSITY, SystemUtil.getDensity(this));
+        this.strDensityDpi = sharedPref.getString(Constants.KEY_DENSITY_DPI, SystemUtil.getDensityDpi(this));
 
     }
 
@@ -182,6 +214,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editor.putString(Constants.KEY_NETWORK_COUNTRY, this.strNetworkCountry);
         editor.putString(Constants.KEY_NETWORK_OPERATOR, this.strNetworkOperator);
         editor.putString(Constants.KEY_NETWORK_OPERATOR_NAME, this.strNetworkOperatorName);
+        editor.putString(Constants.KEY_MAC_ADDRESS, this.strMacAddress);
+        editor.putString(Constants.KEY_IP_ADDRESS, this.strIpAddress);
+        editor.putString(Constants.KEY_SSID, this.strSsid);
+        editor.putString(Constants.KEY_BSSID, this.strBssid);
+        editor.putString(Constants.KEY_DENSITY, this.strDensity);
+        editor.putString(Constants.KEY_DENSITY_DPI, this.strDensityDpi);
         editor.apply();
     }
 
@@ -205,7 +243,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.simOperatorName.setText(this.strSimOperatorName);
         this.networkCountry.setText(this.strNetworkCountry);
         this.networkOperator.setText(this.strNetworkOperator);
-        this.netWorkOperatorName.setText(this.strNetworkOperatorName);
+        this.networkOperatorName.setText(this.strNetworkOperatorName);
+        this.macAddress.setText(this.strMacAddress);
+        this.ipAddress.setText(this.strIpAddress);
+        this.ssid.setText(this.strSsid);
+        this.bssid.setText(this.strBssid);
+        this.density.setText(this.strDensity);
+        this.densityDpi.setText(this.strDensityDpi);
     }
 
     private void getTextView() {
@@ -228,7 +272,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.simOperatorName = findViewById(R.id.sim_operator_name);
         this.networkCountry = findViewById(R.id.network_country);
         this.networkOperator = findViewById(R.id.network_operator);
-        this.netWorkOperatorName = findViewById(R.id.network_operator_name);
+        this.networkOperatorName = findViewById(R.id.network_operator_name);
+        this.macAddress = findViewById(R.id.mac_address);
+        this.ipAddress = findViewById(R.id.ip_address);
+        this.ssid = findViewById(R.id.ssid);
+        this.bssid = findViewById(R.id.bssid);
+        this.density = findViewById(R.id.density);
+        this.densityDpi = findViewById(R.id.density_dpi);
     }
 
     private void setDefaultValues() {
@@ -244,17 +294,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         defaultEditor.putString(Constants.KEY_SDK, properties.getProperty(Constants.BUILD_VERSION_SDK, ""));
         defaultEditor.putString(Constants.KEY_SERIAL, Build.SERIAL);
 
-        defaultEditor.putString(Constants.KEY_ANDROID_ID, getAndroidID());
-        defaultEditor.putString(Constants.KEY_IMEI, getIMEI());
-        defaultEditor.putString(Constants.KEY_PHONE_NUMBER, getPhoneNumber());
-        defaultEditor.putString(Constants.KEY_SIMSERIAL_NUMBER, getSimserialNumber());
-        defaultEditor.putString(Constants.KEY_IMSI, getIMSI());
-        defaultEditor.putString(Constants.KEY_SIM_COUNTRY, getSimCountry());
-        defaultEditor.putString(Constants.KEY_SIM_OPERATOR, getSimOperator());
-        defaultEditor.putString(Constants.KEY_SIM_OPERATOR_NAME, getSimOperatorName());
-        defaultEditor.putString(Constants.KEY_NETWORK_COUNTRY, getNetworkCountry());
-        defaultEditor.putString(Constants.KEY_NETWORK_OPERATOR, getNetWorkOperator());
-        defaultEditor.putString(Constants.KEY_NETWORK_OPERATOR, getNetWorkOperatorName());
+        defaultEditor.putString(Constants.KEY_ANDROID_ID, SystemUtil.getAndroidID(this));
+        defaultEditor.putString(Constants.KEY_IMEI, SystemUtil.getIMEI(this));
+        defaultEditor.putString(Constants.KEY_PHONE_NUMBER, SystemUtil.getPhoneNumber(this));
+        defaultEditor.putString(Constants.KEY_SIMSERIAL_NUMBER, SystemUtil.getSimserialNumber(this));
+        defaultEditor.putString(Constants.KEY_IMSI, SystemUtil.getIMSI(this));
+        defaultEditor.putString(Constants.KEY_SIM_COUNTRY, SystemUtil.getSimCountry(this));
+        defaultEditor.putString(Constants.KEY_SIM_OPERATOR, SystemUtil.getSimOperator(this));
+        defaultEditor.putString(Constants.KEY_SIM_OPERATOR_NAME, SystemUtil.getSimOperatorName(this));
+        defaultEditor.putString(Constants.KEY_NETWORK_COUNTRY, SystemUtil.getNetworkCountry(this));
+        defaultEditor.putString(Constants.KEY_NETWORK_OPERATOR, SystemUtil.getNetWorkOperator(this));
+        defaultEditor.putString(Constants.KEY_NETWORK_OPERATOR, SystemUtil.getNetworkOperatorName(this));
+        defaultEditor.putString(Constants.KEY_MAC_ADDRESS, SystemUtil.getMacAddress(this));
+        defaultEditor.putString(Constants.KEY_IP_ADDRESS, SystemUtil.getIpAddress(this));
+        defaultEditor.putString(Constants.KEY_SSID, SystemUtil.getSsid(this));
+        defaultEditor.putString(Constants.KEY_BSSID, SystemUtil.getBssid(this));
         defaultEditor.putBoolean(Constants.KEY_IS_SET, true);
         defaultEditor.apply();
     }
@@ -266,95 +320,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.taost = Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT);
         this.taost.show();
     }
-
-    private String getAndroidID() {
-        return Settings.Secure.getString(this.getContentResolver(), Settings.Secure.ANDROID_ID);
-    }
-
-    private String getIMEI() {
-        TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        String imei = "NA";
-        try {
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-                imei = getAndroidID();
-            } else {
-                imei = tm.getDeviceId();
-            }
-        } catch (Exception e) {
-            Log.e("PHONE", "获取IMEI出错=" + e.getMessage());
-        }
-        return imei;
-    }
-
-    private String getPhoneNumber() {
-        TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        String phoneNumber = "";
-        try {
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-                phoneNumber = "13800138000";
-            } else {
-                phoneNumber = tm.getLine1Number();
-            }
-        } catch (Exception e) {
-            Log.e("PHONE", "获取手机号码出错=" + e.getMessage());
-        }
-        return phoneNumber;
-    }
-
-    private String getSimserialNumber() {
-        TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        String simserialNumber = "";
-
-        try {
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-                simserialNumber = "NA";
-            } else {
-                simserialNumber = tm.getSimSerialNumber();
-            }
-        } catch (Exception e) {
-            Log.e("PHONE", "获取手机卡序列号出错=" + e.getMessage());
-        }
-        return simserialNumber;
-    }
-    private String getIMSI() {
-        TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        String imsi = "";
-
-        try {
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-                imsi = "NA";
-            } else {
-                imsi = tm.getSubscriberId();
-            }
-        } catch (Exception e) {
-            Log.e("PHONE", "获取IMSI出错=" + e.getMessage());
-        }
-        return imsi;
-    }
-
-    private String getSimCountry() {
-        TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        return tm.getSimCountryIso();
-    }
-    private String getSimOperator() {
-        TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        return tm.getSimOperator();
-    }
-    private String getSimOperatorName() {
-        TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        return tm.getSimOperatorName();
-    }
-    private String getNetworkCountry() {
-        TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        return tm.getNetworkCountryIso();
-    }
-    private String getNetWorkOperator() {
-        TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        return tm.getNetworkOperator();
-    }
-    private String getNetWorkOperatorName() {
-        TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        return tm.getNetworkOperatorName();
-    }
-
 }

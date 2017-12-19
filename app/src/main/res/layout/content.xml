@@ -86,7 +86,35 @@
         <TextView android:id="@+id/network_operator_name" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
     </LinearLayout>
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
-        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="QQQQQQQ" android:singleLine="true" android:layout_weight="0.6" />
-        <TextView android:id="@+id/t25" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/mac_address" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/mac_address" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/ip_address" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/ip_address" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/ssid" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/ssid" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/bssid" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/bssid" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/density" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/density" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/density_dpi" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/density_dpi" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="QQQQQQQ" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/t3" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10.0dip" android:weightSum="1.0">
+        <TextView android:gravity="end" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:text="QQQQQQQ" android:singleLine="true" android:layout_weight="0.6" />
+        <TextView android:id="@+id/t29" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="0.4" />
     </LinearLayout>
 </LinearLayout>

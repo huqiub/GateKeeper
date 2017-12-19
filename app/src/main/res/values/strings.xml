@@ -4,44 +4,37 @@
     <string name="restore">还原</string>
 
 
-    <string name="manufacturer">制造商 :  </string>
-    <string name="brand">品牌 :  </string>
-    <string name="model">型号 :  </string>
-    <string name="product">产品名 :  </string>
-    <string name="device">设备名 :  </string>
-    <string name="user">设备用户名 :  </string>
-    <string name="release">系统版本 :  </string>
-    <string name="sdk">系统版本值 :  </string>
-    <!--<string name="board">主板 :  </string>-->
-    <!--<string name="cpu">系统架构 :  </string>-->
-    <!--<string name="id">设备版本号 :  </string>-->
-    <!--<string name="display">显示屏参数 :  </string>-->
-    <!--<string name="hardware">硬件名称 :  </string>-->
-    <string name="android_id">Android_ID :  </string>
-    <string name="serial">串口序列号 :  </string>
-    <string name="imei">IMEI : </string>
-    <string name="phone_number">手机号码 :  </string>
-    <string name="simserial_number">手机卡序列号 :  </string>
-    <string name="imsi">IMSI :  </string>
-    <string name="sim_country">手机卡国家 :  </string>
-    <string name="sim_operator">运营商 :  </string>
-    <string name="sim_operator_name">运营商名称 :  </string>
-    <string name="network_country">国家ISO代码 :  </string>
-    <string name="network_operator">网络运营商类型 : </string>
-    <string name="network_operator_name">网络类型名 : </string>
-    <string name="mac_address">MAC地址 :  getMacAddress 07:2f:24:5h:6r:7e</string>
-    <string name="ssid">无线路由器 :  getSSID ae0089dhf</string>
-    <string name="bssid">无线路由器地址 :  getBSSID 07:2f:24:5h:6r:7e</string>
+    <string name="manufacturer">制造商 :&#160;</string>
+    <string name="brand">品牌 :&#160;</string>
+    <string name="model">型号 :&#160;&#160;</string>
+    <string name="product">产品名 :&#160;</string>
+    <string name="device">设备名 :&#160;</string>
+    <string name="user">设备用户名 :&#160;</string>
+    <string name="release">系统版本 :  &#160;</string>
+    <string name="sdk">系统版本值 :  &#160;</string>
+
+    <string name="android_id">Android_ID :  &#160;</string>
+    <string name="serial">串口序列号 :  &#160;</string>
+    <string name="imei">IMEI : &#160;</string>
+    <string name="phone_number">手机号码 :  &#160;</string>
+    <string name="simserial_number">手机卡序列号 :  &#160;</string>
+    <string name="imsi">IMSI :  &#160;</string>
+    <string name="sim_country">手机卡国家 :  &#160;</string>
+    <string name="sim_operator">运营商 :  &#160;</string>
+    <string name="sim_operator_name">运营商名称 :  &#160;</string>
+    <string name="network_country">国家ISO代码 :  &#160;</string>
+    <string name="network_operator">网络运营商类型 : &#160;</string>
+    <string name="network_operator_name">网络类型名称 : &#160;</string>
+    <string name="mac_address">MAC地址 :  &#160;</string>
+    <string name="ip_address">内网IP(wifi可用) : &#160;</string>
+    <string name="ssid">无线路由器 :  &#160;</string>
+    <string name="bssid">无线路由器地址 :  &#160;</string>
 
 
-    <string name="gl_renderer">GPU :  GL_RENDERER</string>
-    <string name="gl_vendor">GPU厂商 :  GL_VENDOR</string>
-    <string name="ip_address">内网IP(wifi可用) : getIpAddress 192.168.1.134 </string>
+    <string name="gl_renderer">GPU :  GL_RENDERER&#160;</string>
+    <string name="gl_vendor">GPU厂商 :  GL_VENDOR&#160;</string>
 
-    <string name="density">屏幕密度 :  density 3.0</string>
-    <string name="density_dpi">屏幕DPI :  densityDpi 480</string>
-
-
-
+    <string name="density">屏幕密度 :  &#160;</string>
+    <string name="density_dpi">屏幕DPI :  &#160;</string>
 
 </resources>
